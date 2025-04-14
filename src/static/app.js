@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
+        addRegisterButton(activityCard, name);
         activitiesList.appendChild(activityCard);
 
         // Add option to select dropdown
@@ -65,6 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Failed to load activities. Please try again later.</p>";
       console.error("Error fetching activities:", error);
     }
+  }
+
+  // Add 'register student' button functionality
+  function addRegisterButton(activityCard, activityName) {
+    const registerButton = document.createElement("button");
+    registerButton.textContent = "Register Student";
+    registerButton.className = "register-btn";
+    registerButton.addEventListener("click", () => {
+      document.getElementById("signup-container").style.display = "block";
+      document.getElementById("activity").value = activityName;
+    });
+    activityCard.appendChild(registerButton);
   }
 
   // Handle unregister functionality

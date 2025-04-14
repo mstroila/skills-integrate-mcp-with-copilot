@@ -33,11 +33,19 @@ main {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  flex-direction: column-reverse;
 }
 
 @media (min-width: 768px) {
   main {
     grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Ensure responsiveness for desktop and mobile */
+@media (max-width: 768px) {
+  .activity-card {
+    width: 90%;
   }
 }
 
